@@ -88,32 +88,20 @@ function App() {
 
     }
 
-    // if (exist) {
-    //   // if exist true then find product in the cart and add 1 to the quantity of the product
-    //   setCartItems(cartItems.map( (x) =>
-    //     x.id === product.id ? { ...exist, qty: exist.qty + qtyToCart } : x));
-    //     setQtyToCart(0);
-
-    //     console.log(cartItems)
-    // } else {
-    //   //if the product being added is not in the cart already then 1 of said item is added
-    //   setCartItems([...cartItems, {...product, qty: qtyToCart}]);
-    //   setQtyToCart(0);
-    //   console.log(cartItems)
-    // }
   }
 
   const removeProduct = (product) => {
 
-    const exist = cartItems.find( (x) => x.id === product.id); 
+    // const exist = cartItems.find( (x) => x.id === product.id); 
 
-    if (exist.qty === 1) {
-      setCartItems(cartItems.filter((x) => x.id !== product.id))
-    } else {
-      setCartItems(cartItems.map((x) =>
-        x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x));
-    }
+    // if (exist.qty === 1) {
+    //   setCartItems(cartItems.filter((x) => x.id !== product.id))
+    // } else {
+    //   setCartItems(cartItems.map((x) =>
+    //     x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x));
+    // }
       
+    setCartItems([]);
   }
 
 
@@ -122,7 +110,12 @@ function App() {
     <ThemeProvider theme={ theme }>
       <div className="App">
         <Navbar handleShowCart={handleShowCart} showCart={showCart}/>
-        <ShoppingCart addProduct={addProduct} removeProduct={removeProduct} cartItems={cartItems} showCart={showCart}/>
+        <ShoppingCart addProduct={addProduct} 
+                      removeProduct={removeProduct} 
+                      cartItems={cartItems} 
+                      showCart={showCart}
+                      thumbnails={thumbnails}
+                      />
         <MainContent productImg={productImg} 
         thumbnails={thumbnails} 
         addProduct={addProduct} 

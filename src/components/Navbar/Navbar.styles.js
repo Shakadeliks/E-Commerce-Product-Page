@@ -32,7 +32,17 @@ export const NavbarContainer = styled.div`
     @media screen and (min-width: 900px) {
         border-bottom: solid 0.050rem ${({ theme }) => theme.colors.grayishBlue};
         max-width: 70rem;
-    } 
+    }
+
+    @media screen and (min-width: 1250px) {
+        max-width: 80rem;
+        
+   } 
+
+   @media screen and (min-width: 1350px) {
+        max-width: 85rem;
+        
+   }
 `
 
 
@@ -83,9 +93,7 @@ export const NavItem = styled.li`
     cursor: pointer;
     transition: 0.3s;
     
-    &:hover {
-        border-bottom: 3px solid ${ ({ theme }) => theme.colors.orange};
-    } 
+     
 
 
     @media screen and (min-width: 900px) {
@@ -94,10 +102,15 @@ export const NavItem = styled.li`
         color: ${({ theme }) => theme.colors.darkGrayishBlue};
         height: 100%;
 
-
         &:hover {
+
+        border-bottom: 3px solid ${ ({ theme }) => theme.colors.orange};
+        color: black;
+
+        }
+        /* &:hover {
         border-bottom: 3px solid  ${ ({ theme }) => theme.colors.orange};
-        } 
+        }  */
     }
 `
 

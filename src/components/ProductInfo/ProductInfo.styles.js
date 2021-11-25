@@ -20,9 +20,6 @@ export const InfoContainer = styled.div`
         padding-right: 3.063rem; */
     }
 
-    @media screen and (min-width: 1000px) {
-        
-    }
 
     @media screen and (min-width: 1054px) {
         padding-left: 5%;
@@ -32,6 +29,11 @@ export const InfoContainer = styled.div`
     @media screen and (min-width: 1100px) {
         padding-left: 8%;
     }
+
+    
+    /* @media screen and (min-width: 1150px) {
+        padding-left: 11%;
+    } */
 `
 
 export const SmallHeading = styled.h2`
