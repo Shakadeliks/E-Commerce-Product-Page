@@ -1,5 +1,13 @@
 import React from 'react';
-import { BackgroundOverlay, ImageContainer, ThumbnailsContainer, Thumbnail, LeftArrowIcon, RightArrowIcon, ArrowContainer, Slider, Slide, Image, LightBoxCloseBtn } from './ModalLightbox.style';
+import { BackgroundOverlay, 
+    ThumbnailsContainer, 
+    Thumbnail, 
+    LeftArrowIcon, 
+    RightArrowIcon, 
+    Slider, 
+    Slide, 
+    Image, 
+    LightBoxCloseBtn } from './ModalLightbox.style';
 import LeftArrow from "../../images/icon-previous.svg"
 import RightArrow from "../../images/icon-next.svg"
 

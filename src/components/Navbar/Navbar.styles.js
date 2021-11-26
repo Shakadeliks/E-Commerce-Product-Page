@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import SVG from "react-inlinesvg";
 
-// interface SVGProps {
-//     color: string
-// }
-
 export const Nav = styled.nav`
 
     height: 4rem;
@@ -61,7 +57,6 @@ export const NavMenu = styled.ul`
     font-weight: 700;
     padding: 1.6rem 1.25rem;
     transform: ${ ({ isNavOpen }) => isNavOpen ? 'translateX(0)' : 'translateX(-100%)'}; 
-    
     transition: all 0.3s;
 
     @media screen and (min-width:900px) {
@@ -92,9 +87,6 @@ export const NavItem = styled.li`
     padding-bottom: 1.875rem;
     cursor: pointer;
     transition: 0.3s;
-    
-     
-
 
     @media screen and (min-width: 900px) {
         padding: 0 0.5rem ;
@@ -108,9 +100,7 @@ export const NavItem = styled.li`
         color: black;
 
         }
-        /* &:hover {
-        border-bottom: 3px solid  ${ ({ theme }) => theme.colors.orange};
-        }  */
+
     }
 `
 

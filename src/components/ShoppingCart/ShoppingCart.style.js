@@ -37,7 +37,6 @@ export const Basket = styled.div`
 
 export const EmptyCart = styled.div`
     color: ${ ({ theme }) => theme.colors.darkGrayishBlue};
-    
     font-weight: 700;
     display: flex;
     justify-content: center;
@@ -90,12 +89,9 @@ export const CheckoutBtn = styled.button`
     background-color: ${({ theme }) => theme.colors.orange};
     color: white;
     font-weight: 700;
-    /* display: flex; */
     align-items: center;
-    /* justify-content: center; */
     border-radius: 0.6rem;
     cursor: pointer;
-    /* max-width: 375px; */
     margin: 1.2rem auto;
     transition: opacity 0.3s;
     &:hover {

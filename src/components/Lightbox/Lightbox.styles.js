@@ -11,13 +11,10 @@ export const SliderContainer = styled.div`
         display: inline-flex;
         flex-direction: column;
         
-
     }
 
     @media screen and (min-width: 1000px) {
-        /* padding: 0 10rem; */
         padding-top: 4.6rem;
-        /*padding-left: 3.063rem; */
         padding-left: 5%;
     }
 `
@@ -25,7 +22,6 @@ export const SliderContainer = styled.div`
 export const Slider = styled.div`
 
     position: relative;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +36,6 @@ export const Slider = styled.div`
         
         border-radius: 1rem;
         overflow: hidden;
-        /* max-width: 100%; */
         height: 26rem;
         
     }
@@ -72,7 +67,6 @@ export const LeftArrowIcon = styled.img`
     border-radius: 1.5rem;
     padding: 0.6rem;
     cursor: pointer;
-    /* z-index: 10; */
     user-select: none;
 
     @media screen and (min-width: 900px) {

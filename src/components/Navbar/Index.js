@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-
 import Hamburger from '../../images/icon-menu.svg';
 import Logo from "../../images/logo.svg";
 import Basket from "../../images/icon-cart.svg";
 import Avatar from "../../images/image-avatar.png"
 import Close from "../../images/icon-close.svg"
-import { Nav, NavbarContainer, MobileHamIcon, LogoIcon, BasketIcon, AvatarIcon, NavMenu, NavItem, CloseIcon,NavMenuBackgroundOverlay} from "./Navbar.styles";
+import { Nav, 
+    NavbarContainer, 
+    MobileHamIcon, 
+    LogoIcon, 
+    BasketIcon, 
+    AvatarIcon, 
+    NavMenu, 
+    NavItem, 
+    CloseIcon,
+    NavMenuBackgroundOverlay } from "./Navbar.styles";
 
 const Navbar = ({ handleShowCart, showCart }) => {
 

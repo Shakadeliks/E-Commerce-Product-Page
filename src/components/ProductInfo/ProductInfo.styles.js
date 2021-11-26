@@ -4,7 +4,6 @@ import { BsCart3 } from "react-icons/bs"
 
 export const InfoContainer = styled.div`
     padding: 1rem 1rem;
-    /* width: 50%; */
     margin: 0 auto;
 
     @media screen and (min-width: 700px) {
@@ -15,9 +14,7 @@ export const InfoContainer = styled.div`
         margin-right: 6rem;
         display: inline;
         margin-top: 6.5rem;
-        /* margin-top: 6rem; */
-        /* padding-top: 4.6rem;
-        padding-right: 3.063rem; */
+
     }
 
 
@@ -30,10 +27,6 @@ export const InfoContainer = styled.div`
         padding-left: 8%;
     }
 
-    
-    /* @media screen and (min-width: 1150px) {
-        padding-left: 11%;
-    } */
 `
 
 export const SmallHeading = styled.h2`

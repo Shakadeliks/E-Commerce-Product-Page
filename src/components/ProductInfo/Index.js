@@ -1,5 +1,19 @@
 import React from 'react'
-import { AddBtn, AddToCartContainer, AmountAdded, CartFeaturesContainer, CartIcon, Discount, InfoContainer, Mainheading, MinusSign, OriginalPrice, PlusSign, Price, PricingContainer, ProductDesc, SmallHeading } from './ProductInfo.styles'
+import { AddBtn, 
+    AddToCartContainer, 
+    AmountAdded, 
+    CartFeaturesContainer, 
+    CartIcon, 
+    Discount, 
+    InfoContainer, 
+    Mainheading, 
+    MinusSign, 
+    OriginalPrice, 
+    PlusSign, 
+    Price, 
+    PricingContainer, 
+    ProductDesc,
+    SmallHeading } from './ProductInfo.styles'
 
 
 

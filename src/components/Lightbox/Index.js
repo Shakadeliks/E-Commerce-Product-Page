@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { SliderContainer, Slider, Slide, LeftArrowIcon, RightArrowIcon, Image, ThumbnailsContainer, Thumbnail } from './Lightbox.styles';
+import { SliderContainer, 
+    Slider, 
+    Slide, 
+    LeftArrowIcon, 
+    RightArrowIcon, 
+    Image, 
+    ThumbnailsContainer, 
+    Thumbnail } from './Lightbox.styles';
 import LeftArrow from "../../images/icon-previous.svg";
 import RightArrow from "../../images/icon-next.svg"
 import ModalLightbox from '../ModalLightBox/Index';
 
 const useWindowSize = () => {
-    const [size, setSize] = useState([window.innerHeight, window.innerWidth]);
+    const [size, setSize] = useState([window.innerWidth]);
   
     useEffect(() => {
       const handleResize = () => {
-        setSize([window.innerHeight, window.innerWidth]);
+        setSize([window.innerWidth]);
       }
   
       window.addEventListener("resize",handleResize);
@@ -20,7 +27,7 @@ const useWindowSize = () => {
 
 const Lightbox = ({ productImg, thumbnails }) => {
 
-    const [height, width] = useWindowSize();
+    const [width] = useWindowSize();
     // state used as a counter for productImg array of product images
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

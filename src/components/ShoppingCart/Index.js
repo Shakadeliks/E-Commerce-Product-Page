@@ -10,7 +10,9 @@ import { Basket,
         CombinedPrice,
         CheckoutBtn,
         PricesContainer } from './ShoppingCart.style';
-import { product, productImg, thumbnails } from "../Data"
+import { product, 
+    productImg, 
+    thumbnails } from "../Data"
 
 
 function ShoppingCart({ cartItems, removeProduct, showCart, thumbnails }) {
