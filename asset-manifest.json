@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/E-Commerce-Product-Page/static/css/main.89db9056.chunk.css",
+    "main.js": "/E-Commerce-Product-Page/static/js/main.b4e43fec.chunk.js",
+    "main.js.map": "/E-Commerce-Product-Page/static/js/main.b4e43fec.chunk.js.map",
+    "runtime-main.js": "/E-Commerce-Product-Page/static/js/runtime-main.1ef5a4cd.js",
+    "runtime-main.js.map": "/E-Commerce-Product-Page/static/js/runtime-main.1ef5a4cd.js.map",
+    "static/js/2.9d6d425e.chunk.js": "/E-Commerce-Product-Page/static/js/2.9d6d425e.chunk.js",
+    "static/js/2.9d6d425e.chunk.js.map": "/E-Commerce-Product-Page/static/js/2.9d6d425e.chunk.js.map",
+    "index.html": "/E-Commerce-Product-Page/index.html",
+    "static/css/main.89db9056.chunk.css.map": "/E-Commerce-Product-Page/static/css/main.89db9056.chunk.css.map",
+    "static/js/2.9d6d425e.chunk.js.LICENSE.txt": "/E-Commerce-Product-Page/static/js/2.9d6d425e.chunk.js.LICENSE.txt",
+    "static/media/icon-cart.539ec608.svg": "/E-Commerce-Product-Page/static/media/icon-cart.539ec608.svg",
+    "static/media/icon-close.c3904486.svg": "/E-Commerce-Product-Page/static/media/icon-close.c3904486.svg",
+    "static/media/icon-menu.50995564.svg": "/E-Commerce-Product-Page/static/media/icon-menu.50995564.svg",
+    "static/media/icon-next.95b3c761.svg": "/E-Commerce-Product-Page/static/media/icon-next.95b3c761.svg",
+    "static/media/icon-previous.a1088d81.svg": "/E-Commerce-Product-Page/static/media/icon-previous.a1088d81.svg",
+    "static/media/image-product-1.520cc50b.jpg": "/E-Commerce-Product-Page/static/media/image-product-1.520cc50b.jpg",
+    "static/media/image-product-2.c8bb0aac.jpg": "/E-Commerce-Product-Page/static/media/image-product-2.c8bb0aac.jpg",
+    "static/media/image-product-3.af5c71ba.jpg": "/E-Commerce-Product-Page/static/media/image-product-3.af5c71ba.jpg",
+    "static/media/image-product-4.9962862e.jpg": "/E-Commerce-Product-Page/static/media/image-product-4.9962862e.jpg",
+    "static/media/logo.5038e214.svg": "/E-Commerce-Product-Page/static/media/logo.5038e214.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ef5a4cd.js",
+    "static/js/2.9d6d425e.chunk.js",
+    "static/css/main.89db9056.chunk.css",
+    "static/js/main.b4e43fec.chunk.js"
+  ]
+}
