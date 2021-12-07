@@ -1,70 +1,159 @@
-# Getting Started with Create React App
+# E-commerce product page 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
 
-## Available Scripts
+- [Overview](#overview)
+  - [Objectives](#objectives)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-In the project directory, you can run:
+### Objectives
 
-### `npm start`
+Users should be able to:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Open a lightbox gallery by clicking on the large product image
+- Switch the large product image by clicking on the small thumbnail images
+- Add items to the cart
+- View the cart and remove items from it
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Screenshot
 
-### `npm test`
+![./E-commerce-page-screenshot.png]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Links
 
-### `npm run build`
+- Solution URL: [https://github.com/Shakadeliks/E-Commerce-Product-Page]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Live Site URL: [https://shakadeliks.github.io/E-Commerce-Product-Page/]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built with
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ReactJS
+- Styled Components
+- CSS media queries
+- React Icons
+- Mobile-first workflow
 
-### `npm run eject`
+### What I learned
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Something major I learnt was creating a responive lightbox and carousel without custom dependencies and packages for react.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+const Lightbox = ({ productImg, thumbnails }) => {
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    const [width] = useWindowSize();
+    // state used as a counter for productImg array of product images
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    const [openModalLightbox, setOpenModalLightbox] = useState(false);
 
-## Learn More
+    const modalLightboxToggle = () => {
+        setOpenModalLightbox(!openModalLightbox);
+        
+    }
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    // function to start at 0 index in images array when displaying and resetting to 0 after final image
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    const nextImage = () => {
+        setCurrentImageIndex((prevIndex) => prevIndex === productImg.length - 1 ? 0 : prevIndex + 1);
+    }
 
-### Code Splitting
+    const prevImage = () => {
+        setCurrentImageIndex((prevIndex) => prevIndex === 0 ? productImg.length - 1 : prevIndex - 1);
+    }
+    
+    return (
+        <SliderContainer>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+            {width >= 900 ? 
+                <Slider onClick={modalLightboxToggle} style={{ cursor: "pointer" }}>
 
-### Analyzing the Bundle Size
+                    <Slide>
+                        <Image src={productImg[currentImageIndex]}  />
+                    </Slide>
+                    <LeftArrowIcon src={LeftArrow} alt="Previous Arrow" onClick={prevImage}/>
+                    <RightArrowIcon src={RightArrow} alt="Next Arrow" onClick={nextImage}/>
+                
+                </Slider> :
+                <Slider>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+                    <Slide>
+                        <Image src={productImg[currentImageIndex]}  />
+                    </Slide>
+                    <LeftArrowIcon src={LeftArrow} alt="Previous Arrow" onClick={prevImage}/>
+                    <RightArrowIcon src={RightArrow} alt="Next Arrow" onClick={nextImage}/>
+                
+                </Slider>}
+            
+            { width >= 900 ?
+                <ThumbnailsContainer>
+                    {thumbnails.map( (image, index) => (
+                        <Thumbnail key={index}  onClick={ () => { setCurrentImageIndex(index)}} index={index} currentImageIndex={currentImageIndex}>
+                            <img src={image} alt="Shoe Image" />
+                        </Thumbnail>
+                    ))}
+                </ThumbnailsContainer> :
+                null}
+            
+            <ModalLightbox 
+            openModalLightbox={openModalLightbox}
+            modalLightboxToggle={modalLightboxToggle} 
+            productImg={productImg} 
+            currentImageIndex={currentImageIndex} 
+            setCurrentImageIndex={setCurrentImageIndex} 
+            thumbnails={thumbnails}
+            nextImage={nextImage}
+            prevImage={prevImage} 
+            />
+        </SliderContainer>
+    )
+}
 
-### Making a Progressive Web App
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I got experience using Styled components which turned out to be very intuitive and complemented my workflow.
 
-### Advanced Configuration
+```js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export const Thumbnail = styled.div`
 
-### Deployment
+    width: 5rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    &::after {
+        content: '';
+        display:  ${({index, currentImageIndex}) => currentImageIndex === index ? "inline" : "none"};
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.65);
+        position: absolute;
+        top: 0;
+        left: 0; 
+    }
 
-### `npm run build` fails to minify
+    img {
+        width: 100%;
+        border-radius: 1rem;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+        ${ ({ index, currentImageIndex }) => currentImageIndex === index 
+        ? css`
+            border: solid 2px ${({ theme }) => theme.colors.orange};`
+        : css`
+            null`}
+    }
+
+    
+`
+}

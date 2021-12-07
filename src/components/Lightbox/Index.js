@@ -11,6 +11,8 @@ import LeftArrow from "../../images/icon-previous.svg";
 import RightArrow from "../../images/icon-next.svg"
 import ModalLightbox from '../ModalLightBox/Index';
 
+// function to keep track of changes in window's width to add responsive functionality to lightbox Slider components, using size state as conditional statement for conitional rendering
+
 const useWindowSize = () => {
     const [size, setSize] = useState([window.innerWidth]);
   
@@ -31,6 +33,7 @@ const Lightbox = ({ productImg, thumbnails }) => {
     // state used as a counter for productImg array of product images
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+    // state to toggle open and close for desktop lightbox
     const [openModalLightbox, setOpenModalLightbox] = useState(false);
 
     const modalLightboxToggle = () => {

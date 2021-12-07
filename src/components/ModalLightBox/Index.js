@@ -37,7 +37,7 @@ const ModalLightbox = ({ productImg, currentImageIndex, thumbnails, setCurrentIm
             </Slider>
             <ThumbnailsContainer>
                 {thumbnails.map( (image, index) => (
-                    <Thumbnail key={index}  onClick={ () => { setCurrentImageIndex(index)}} index={index} currentImageIndex={currentImageIndex}>
+                    <Thumbnail key={index}  onClick={ () => { setCurrentImageIndex(index)} } index={index} currentImageIndex={currentImageIndex}>
                         <img src={image} alt="Shoe Image" />
                     </Thumbnail>
                 ))}

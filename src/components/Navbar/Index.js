@@ -16,12 +16,11 @@ import { Nav,
     NavMenuBackgroundOverlay } from "./Navbar.styles";
 
 const Navbar = ({ handleShowCart, showCart }) => {
-
+    // state and function to enable toggle between mobile nav open an close
     const [isNavOpen, setisNavOpen] = useState(false);
 
     const navMenuToggle = () => {
-        setisNavOpen(!isNavOpen);
-        
+        setisNavOpen(!isNavOpen);  
     }
 
     

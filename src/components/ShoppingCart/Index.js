@@ -44,7 +44,7 @@ function ShoppingCart({ cartItems, removeProduct, showCart, thumbnails }) {
                             </CartItemContainer> })}
 
             {cartItems.length === 0 ? null
-                : <CheckoutBtn>Checkout</CheckoutBtn>
+                :<CheckoutBtn>Checkout</CheckoutBtn>
             }           
                 
         </Basket>

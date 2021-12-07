@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { productImg, thumbnails, product } from "./components/Data";
 import MainContent from "./components/MainContent/Index";
 
+// themeProvider for the design of the wpage to be used in styled components css
 const theme = {
   colors: {
     orange: "hsl(26, 100%, 55%)",
@@ -22,17 +23,19 @@ const theme = {
 
 
 function App() {
+  //state array to store added item and qty 
 
-  const [cartItems, setCartItems] = useState([
-    
-  ]);
+  const [cartItems, setCartItems] = useState([]);
   
+  //state to toggle between cart popup being shown and not shown
   const [showCart, setShowCart] = useState(false);
-  
+
+  // state to track how much quantity of correponding item to be added to cartItems state
   const [qtyToCart, setQtyToCart] = useState(0);
   
+  //functions to add and minus the qty to be added to cartItems onClick
   const addQtyToCart = () => {
-    
+
     setQtyToCart(qtyToCart + 1);
   }
 
@@ -42,6 +45,7 @@ function App() {
     
   } 
 
+  // function to toggle open and close of cart popup when cart icon is clicked
   const handleShowCart = () => {
       setShowCart(!showCart);
   }
@@ -53,54 +57,37 @@ function App() {
 
     if(!exist) {
 
-      // console.log(totalPrice);
-
+    // create newItem object with new qty and totalPrice property to be added to cartItems array
       let newItem = {
         ...product, 
         qty: qtyToCart, 
         totalPrice: product.price * qtyToCart
       };
 
-      console.log(newItem); 
-
       setCartItems([...cartItems, newItem])
-
-      console.log(cartItems);  
+ 
     } else {
       
-
+      //if exist returns as true , qty, price and totalPrice properties destructured from returned object.
+      
       const { qty, price, totalPrice} = exist;
-      console.log(qty);
-      console.log(totalPrice);
 
-
+      //qty and totalPrice updated in newExistingItem object when more units added, then newExistingItem added to cartItems.
       const newExistingItem = {
          ...exist,
          qty: parseInt(qty + qtyToCart),
          totalPrice: parseInt(totalPrice + (price * qtyToCart))
       }
 
-      console.log(newExistingItem);
-
       setCartItems([...cartItems, newExistingItem]);
-
-      console.log(cartItems);
 
     }
 
   }
 
+  //function to delete all product objects in cartItems arary, when delete icon is clicked
+
   const removeProduct = (product) => {
-
-    // const exist = cartItems.find( (x) => x.id === product.id); 
-
-    // if (exist.qty === 1) {
-    //   setCartItems(cartItems.filter((x) => x.id !== product.id))
-    // } else {
-    //   setCartItems(cartItems.map((x) =>
-    //     x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x));
-    // }
-      
     setCartItems([]);
   }
 
